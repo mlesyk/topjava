@@ -15,5 +15,5 @@ public interface MealService {
 
     public List<Meal> getAll(int userId) throws NotFoundException;
 
-    public void update(Meal meal);
+    public void update(Meal meal, int userId);
 }

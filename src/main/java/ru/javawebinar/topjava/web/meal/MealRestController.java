@@ -10,7 +10,6 @@ import ru.javawebinar.topjava.service.MealService;
 
 import java.util.List;
 
-import static ru.javawebinar.topjava.util.ValidationUtil.checkIdConsistent;
 import static ru.javawebinar.topjava.util.ValidationUtil.checkNew;
 
 @Controller
@@ -41,10 +40,9 @@ public class MealRestController {
         service.delete(id, AuthorizedUser.id());
     }
 
-    public void update(Meal meal, int id) {
+    public void update(Meal meal) {
         LOG.info("update " + meal);
-        checkIdConsistent(meal, id);
-        service.update(meal);
+        service.update(meal, AuthorizedUser.id());
     }
 
 }
