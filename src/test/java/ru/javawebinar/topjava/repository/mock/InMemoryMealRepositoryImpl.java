@@ -72,6 +72,12 @@ public class InMemoryMealRepositoryImpl implements MealRepository {
     }
 
     @Override
+    public void deleteAll(int userId) {
+        Map<Integer, Meal> meals = repository.get(userId);
+        meals.clear();
+    }
+
+    @Override
     public Meal get(int id, int userId) {
         Map<Integer, Meal> meals = repository.get(userId);
         return meals == null ? null : meals.get(id);

@@ -31,6 +31,11 @@ public class MealServiceImpl implements MealService {
     }
 
     @Override
+    public void deleteAll(int userId) {
+        repository.deleteAll(userId);
+    }
+
+    @Override
     public List<Meal> getBetweenDateTimes(LocalDateTime startDateTime, LocalDateTime endDateTime, int userId) {
         return repository.getBetween(startDateTime, endDateTime, userId);
     }
